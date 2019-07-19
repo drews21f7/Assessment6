@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Group {
-    var group: [Pair]
-    init(group: [Pair]) {
+class Group: Codable {
+    var group: Pair
+    init(group: Pair) {
         self.group = group
     }
 }

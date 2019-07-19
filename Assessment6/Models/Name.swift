@@ -1,5 +1,5 @@
 //
-//  Pair.swift
+//  Name.swift
 //  Assessment6
 //
 //  Created by Drew Seeholzer on 7/19/19.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-class Pair: Group {
-    var pair: [Name]
-    init(pair: [Name], group: Pair) {
-        self.pair = pair
-        super.init(group: group)
+class Name: Pair {
+    var name: String
+    init(name: String, pair: [Name], group: Pair) {
+        self.name = name
+        super.init(pair: pair, group: group)
     }
     
     required init(from decoder: Decoder) throws {
