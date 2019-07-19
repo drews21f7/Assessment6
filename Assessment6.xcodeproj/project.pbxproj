@@ -16,6 +16,7 @@
 		3A0717F722E21824004B4120 /* PairController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0717F622E21824004B4120 /* PairController.swift */; };
 		3A0717F922E22009004B4120 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0717F822E22009004B4120 /* Name.swift */; };
 		3A0717FB22E22D87004B4120 /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0717FA22E22D87004B4120 /* GroupTableViewController.swift */; };
+		3A0717FD22E23654004B4120 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0717FC22E23654004B4120 /* GroupTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3A0717F622E21824004B4120 /* PairController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairController.swift; sourceTree = "<group>"; };
 		3A0717F822E22009004B4120 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		3A0717FA22E22D87004B4120 /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
+		3A0717FC22E23654004B4120 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +105,8 @@
 		3A0717F022E2161C004B4120 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3A0717F122E21632004B4120 /* Custom Views */,
 				3A0717FA22E22D87004B4120 /* GroupTableViewController.swift */,
+				3A0717F122E21632004B4120 /* Custom Views */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -112,6 +114,7 @@
 		3A0717F122E21632004B4120 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				3A0717FC22E23654004B4120 /* GroupTableViewCell.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A0717FD22E23654004B4120 /* GroupTableViewCell.swift in Sources */,
 				3A0717F522E217E1004B4120 /* Group.swift in Sources */,
 				3A0717DC22E21583004B4120 /* AppDelegate.swift in Sources */,
 				3A0717F322E21688004B4120 /* Pair.swift in Sources */,

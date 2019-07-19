@@ -9,11 +9,28 @@
 import UIKit
 
 class GroupTableViewController: UITableViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
+    
+    // MARK: - Buttons
+    
+    @IBAction func addButtonTapped(_ sender: Any) {
+        let group = PairController.sharedInstance.groups[PairController.sharedInstance.groups.count - 1]
+        if group.groupPair.count < 2 {
+            alertControllerGroupCanBeFilled(group: group)
+        } else if group.groupPair.count == 2 {
+            alertControllerNewGroup()
+        }
+    }
+    
+    @IBAction func randomizeButtonTapped(_ sender: Any) {
+    }
+    
 
     // MARK: - Table view data source
 
@@ -24,16 +41,26 @@ class GroupTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return PairController.sharedInstance.groups.count
+        return PairController.sharedInstance.groups.count * 3
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath)
+        guard let groupCell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as? GroupTableViewCell else { return UITableViewCell() }
+        guard let name1Cell = tableView.dequeueReusableCell(withIdentifier: "name1Cell", for: indexPath) as? GroupTableViewCell else { return UITableViewCell() }
+        guard let name2Cell = tableView.dequeueReusableCell(withIdentifier: "name2Cell", for: indexPath) as? GroupTableViewCell else { return UITableViewCell() }
+        
+        //TODO: - Make names optional to prevent index error from group only having 1 name
+        let group = PairController.sharedInstance.groups[indexPath.row]
+        let name1 = PairController.sharedInstance.groups[indexPath.row].groupPair[0]
+        let name2 = PairController.sharedInstance.groups[indexPath.row].groupPair[1]
+        
+        groupCell.groupLabel?.text = //??
+        name1Cell.name1Label?.text = name1.name
+        name2Cell.name2Label?.text = name2.name
 
-        // Configure the cell...
 
-        return cell
+        return groupCell; name1Cell; name2Cell
     }
     
     func alertControllerNewGroup() {
