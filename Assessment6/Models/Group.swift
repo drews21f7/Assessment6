@@ -8,9 +8,16 @@
 
 import Foundation
 
+//class Group: Codable {
+//    var group: Pair
+//    init(group: Pair) {
+//        self.group = group
+//    }
+//}
+
 class Group: Codable {
-    var group: Pair
-    init(group: Pair) {
-        self.group = group
+    var groupPair: [Name]
+    init(groupPair: [Name]) {
+        self.groupPair = groupPair
     }
 }

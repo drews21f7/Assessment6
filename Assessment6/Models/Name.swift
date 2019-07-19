@@ -8,14 +8,17 @@
 
 import Foundation
 
-class Name: Pair {
+//class Name: Pair {
+//    var name: String
+//    init(name: String, pair: [Name], group: Pair) {
+//        self.name = name
+//        super.init(pair: pair, group: group)
+//    }
+
+class Name: Codable {
     var name: String
-    init(name: String, pair: [Name], group: Pair) {
+    init(name:String) {
         self.name = name
-        super.init(pair: pair, group: group)
-    }
     
-    required init(from decoder: Decoder) throws {
-        fatalError("init(from:) has not been implemented")
     }
 }

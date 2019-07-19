@@ -8,14 +8,14 @@
 
 import Foundation
 
-class Pair: Group {
-    var pair: [Name]
-    init(pair: [Name], group: Pair) {
-        self.pair = pair
-        super.init(group: group)
-    }
-    
-    required init(from decoder: Decoder) throws {
-        fatalError("init(from:) has not been implemented")
-    }
-}
+//class Pair: Group {
+//    var pair: [Name]
+//    init(pair: [Name], group: Pair) {
+//        self.pair = pair
+//        super.init(group: group)
+//    }
+//    
+//    required init(from decoder: Decoder) throws {
+//        fatalError("init(from:) has not been implemented")
+//    }
+//}

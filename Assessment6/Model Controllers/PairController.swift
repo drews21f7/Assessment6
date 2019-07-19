@@ -14,19 +14,33 @@ class PairController {
     
     var groups: [Group] = []
     
-    var pairs: [Pair] = []
+//    var pairs: [Pair] = []
+    
+    var names: [Name] = []
     
     // MARK: - CRUD
     
-//    func createGroup() {
+//    func createGroup(name: String) {
+//        let pair = Pair.init(pair: <#T##[Name]#>, group: <#T##Pair#>)
 //        let group = Group.init(group: [])
 //        groups.append(group)
 //    }
 //
-//    func addNameToGroup(group: [Group], name: String) {
+//    func addNameToPair(group: [Group], name: String) {
 //        let group = Group.init(group: group)
 //    }
     
+    func createGroup() {
+        let group = Group.init(groupPair: [])
+        groups.append(group)
+    }
+    
+    func addName(group: Group, name: String) {
+        if group.groupPair.count < 2 {
+            let name = Name.init(name: name)
+            group.groupPair.append(name)
+        }
+    }
     
     
     
@@ -43,10 +57,18 @@ class PairController {
             print ("Error loading from persistent store: \(error.localizedDescription)")
         }
         
+//        do {
+//            let data = try Data(contentsOf: fileURL())
+//            let decodedPairs = try jsonDecoder.decode([Pair].self, from: data)
+//            pairs = decodedPairs
+//        } catch let error {
+//            print ("Error loading from persistent store: \(error.localizedDescription)")
+//        }
+        
         do {
             let data = try Data(contentsOf: fileURL())
-            let decodedPairs = try jsonDecoder.decode([Pair].self, from: data)
-            pairs = decodedPairs
+            let decodedNames = try jsonDecoder.decode([Name].self, from: data)
+            names = decodedNames
         } catch let error {
             print ("Error loading from persistent store: \(error.localizedDescription)")
         }
@@ -62,8 +84,15 @@ class PairController {
             print ("Error saving to persistent store: \(error.localizedDescription)")
         }
         
+//        do {
+//            let data = try jsonEncoder.encode(pairs)
+//            try data.write(to: fileURL())
+//        } catch let error {
+//            print ("Error saving to persistent store: \(error.localizedDescription)")
+//        }
+        
         do {
-            let data = try jsonEncoder.encode(pairs)
+            let data = try jsonEncoder.encode(names)
             try data.write(to: fileURL())
         } catch let error {
             print ("Error saving to persistent store: \(error.localizedDescription)")
