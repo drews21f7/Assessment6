@@ -33,12 +33,14 @@ class PairController {
     func createGroup() {
         let group = Group.init(groupPair: [])
         groups.append(group)
+        saveToPersistentStore()
     }
     
     func addName(group: Group, name: String) {
         if group.groupPair.count < 2 {
             let name = Name.init(name: name)
             group.groupPair.append(name)
+            saveToPersistentStore()
         }
     }
     

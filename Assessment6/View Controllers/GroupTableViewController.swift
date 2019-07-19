@@ -14,6 +14,7 @@ class GroupTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        PairController.sharedInstance.createGroup()
 
     }
     
@@ -51,11 +52,12 @@ class GroupTableViewController: UITableViewController {
         guard let name2Cell = tableView.dequeueReusableCell(withIdentifier: "name2Cell", for: indexPath) as? GroupTableViewCell else { return UITableViewCell() }
         
         //TODO: - Make names optional to prevent index error from group only having 1 name
-        let group = PairController.sharedInstance.groups[indexPath.row]
+        //let group = PairController.sharedInstance.groups[indexPath.row]
         let name1 = PairController.sharedInstance.groups[indexPath.row].groupPair[0]
         let name2 = PairController.sharedInstance.groups[indexPath.row].groupPair[1]
         
-        groupCell.groupLabel?.text = //??
+        //TODO: - Find way to number each group
+        groupCell.groupLabel?.text = "Group"
         name1Cell.name1Label?.text = name1.name
         name2Cell.name2Label?.text = name2.name
 
