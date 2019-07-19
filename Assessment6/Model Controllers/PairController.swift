@@ -10,7 +10,7 @@ import Foundation
 
 class PairController {
     
-    var sharedInstance = PairController()
+    static var sharedInstance = PairController()
     
     var groups: [Group] = []
     
